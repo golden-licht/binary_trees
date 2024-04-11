@@ -8,12 +8,12 @@
  * @func: A pointer to a function to call for each node. The value in the
  * node is passed as a parameter to this function
  *
- * Description:
+ * Description: If tree or func is null, do nothing
  */
 
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (!tree)
+	if (!tree || !func)
 		return;
 
 	func(tree->n);
